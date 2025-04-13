@@ -18,7 +18,10 @@ const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    setCredentials: (state, action: PayloadAction<Omit<SignInResponse, 'refreshToken'>>) => {
+    setCredentials: (
+      state,
+      action: PayloadAction<Omit<SignInResponse, 'refreshToken'>>,
+    ) => {
       const { user, accessToken } = action.payload;
 
       // 필요한 필드만 저장 (Omit을 통해 필드 제외)
